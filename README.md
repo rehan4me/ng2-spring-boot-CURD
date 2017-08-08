@@ -5,13 +5,13 @@ Simple demo app developed using Angular 4, Spring-Boot and MongoDB.
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Installation
+## Requirements
 To run this project you will have to install following components in your environment.
 
-Node.js: https://nodejs.org/en/
-Angular-CLI: http://gulpjs.com
-MongoDB: https://www.mongodb.com/
-Maven: http://maven.apache.org/
+- Node.js: https://nodejs.org/en/
+- Angular-CLI: http://gulpjs.com
+- MongoDB: https://www.mongodb.com/
+- Maven: http://maven.apache.org/
 
 
 ### Installing/Updating npm
