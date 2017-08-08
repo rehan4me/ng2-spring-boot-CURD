@@ -12,6 +12,11 @@ To run this project you will have to install following components in your enviro
 - MongoDB: https://www.mongodb.com/
 - Maven: http://maven.apache.org/
 
+#### Clone project
+
+```
+$ git clone https://github.com/rehan4me/ng4-spring-boot-mongodb-demo.git ng4-spring-boot-mongodb-demo
+```
 
 #### Go to project directory and install following dependacies.
 
