@@ -60,8 +60,11 @@ export class EmpDetailsComponent implements OnInit {
                 duration: 2000
               })
 	        },
-	        (err) => {}
-	    );
+	        (err) => {
+            this.snackBar.open(err,'',{
+                duration: 20000
+            })
+          });
   	}else{
   		return this.httpService
 	        .updateEmp('/api/emp-details/' + this.empData['id'],this.empData)
@@ -71,8 +74,11 @@ export class EmpDetailsComponent implements OnInit {
                 duration: 2000
               })
 	        },
-	        (err) => {}
-	    );
+	        (err) => {
+            this.snackBar.open(err,'',{
+                duration: 20000
+            })
+          });
   	}
   }
 
