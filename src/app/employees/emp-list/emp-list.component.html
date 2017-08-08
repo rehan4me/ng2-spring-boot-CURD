@@ -13,16 +13,16 @@
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Employee ID Column -->
-    <ng-container cdkColumnDef="employeeId">
-      <md-header-cell *cdkHeaderCellDef> Employee ID </md-header-cell>
-      <md-cell *cdkCellDef="let row"> {{row.employeeId}} </md-cell>
-    </ng-container>
-
     <!-- Employee Name Column -->
     <ng-container cdkColumnDef="employeeName">
       <md-header-cell *cdkHeaderCellDef> Employee Name </md-header-cell>
       <md-cell *cdkCellDef="let row"> {{row.employeeName}} </md-cell>
+    </ng-container>
+
+    <!-- Employee ID Column -->
+    <ng-container cdkColumnDef="employeeId">
+      <md-header-cell *cdkHeaderCellDef> Employee ID </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.employeeId}} </md-cell>
     </ng-container>
 
     <!-- Department Column -->
@@ -40,10 +40,10 @@
     <ng-container cdkColumnDef="actions">
       <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
       <md-cell *cdkCellDef="let row">
-        <form>
-      	<button md-button color="primary"  type="button" (click)="openEmpDoc(row.id)">Edit</button>
-      	<button md-button color="accent" type="button" (click)="deleteEmployee(row.id)">Delete</button>
-        </form>
+        <div class="button-container">
+      	 <button md-button color="primary" type="button" (click)="openEmpDoc(row.id)">Edit</button>
+      	 <button md-button color="accent" type="button" (click)="deleteEmployee(row.id)">Delete</button>
+        </div>
       </md-cell>
     </ng-container>
 

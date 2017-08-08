@@ -4,16 +4,22 @@
   flex-direction: column;
   max-height: 500px;
   min-width: 300px;
-  width:75%;
+  width:100%;
   margin: auto;
 }
 
-.example-header {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-  padding-left: 24px;
-  font-size: 20px;
+@media screen and (min-width: 1170px){
+  .example-container {
+    width:80%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 970px) and (max-width: 1169px){
+  .example-container {
+    width:90%;
+    margin: auto;
+  }
 }
 
 .example-header {
@@ -23,6 +29,13 @@
   padding: 8px 24px 0;
   font-size: 20px;
   justify-content: space-between;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width:100%;
 }
 
 .mat-input-container {

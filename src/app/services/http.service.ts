@@ -33,13 +33,6 @@ export class HttpService {
           .catch(this.handleError);
   }
 
-  /*searchEmp (apiUrl: string): Observable<Employee[]> {
-      return this.http
-          .get(this.baseUrl + apiUrl, this.options)
-          .map(this.extractData)
-          .catch(this.handleError);
-  }*/
-
   updateEmp(url: string, data: any): any {
       return this.http
           .put(this.baseUrl + url, JSON.stringify(data), this.options)

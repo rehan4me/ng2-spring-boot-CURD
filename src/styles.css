@@ -20,6 +20,13 @@ body {
 }
 
 .example-card {
-  width: 80%;
+  width: 85%;
   margin: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .example-card {
+    width: 70%;
+    margin: auto;
+  }
 }

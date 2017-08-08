@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataSource } from '@angular/cdk';
 import { MdPaginator } from '@angular/material';
+import {MdSnackBar} from '@angular/material';
 
 import { HttpService } from '../../services/http.service';
 import { Employee } from '../../model/employee';
@@ -22,9 +23,9 @@ import 'rxjs/add/observable/fromEvent';
 })
 export class EmpListComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private router:Router) {}
+  constructor(private httpService: HttpService, private router:Router, private snackBar:MdSnackBar) {}
 
-  displayedColumns = ['employeeId', 'employeeName', 'department', 'manager','actions'];
+  displayedColumns = ['employeeName', 'employeeId', 'department', 'manager','actions'];
 
   dataSource: ExampleDataSource | null;
 
@@ -60,13 +61,18 @@ export class EmpListComponent implements OnInit {
   }
 
   deleteEmployee(id?:string){
-    return this.httpService
+    this.httpService
           .deleteEmployee('/api/emp-details/'+id)
           .subscribe(data =>{
-            this.getEmployees();
           },
           (err) => {
           });
+          this.snackBar.open('Document deleted.','',{
+                duration: 2000
+          })
+          setTimeout(()=>{
+            this.getEmployees();
+          },300);
   }
 
   exportToExcel(){

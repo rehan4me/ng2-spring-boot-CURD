@@ -4,8 +4,10 @@ import com.ng2sb.config.ExcelConfig;
 import com.ng2sb.models.Employee;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.hssf.util.HSSFColor;
+//import org.apache.poi.ss.usermodel.Row;
+//import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -29,7 +31,7 @@ public class ExcelCommonUtil {
     public void createExcel() {
         setFileName(response, mapToFileName());
 
-        Sheet sheet = workbook.createSheet();
+        Sheet sheet = workbook.createSheet("Employee Details");
 
         createHead(sheet, mapToHeadList());
 
@@ -68,15 +70,30 @@ public class ExcelCommonUtil {
     }
 
     private void createHead(Sheet sheet, List<String> headList) {
-        createRow(sheet, headList, 0);
+        //Set Column width
+        sheet.setDefaultColumnWidth(25);
+
+        // create style for header cells
+        CellStyle style = workbook.createCellStyle();
+        Font font = workbook.createFont();
+        font.setFontName("Arial");
+        style.setFillForegroundColor(HSSFColor.BLUE.index);
+        style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        font.setBold(true);
+        font.setColor(HSSFColor.WHITE.index);
+        style.setFont(font);
+
+        //Create header
+        createRow(sheet, headList, 0, style);
     }
 
+    // Generating data
     private void createBody(Sheet sheet, List<Employee> employees) {
         int rowCount = 1;
         for(Employee employee : employees){
             Row row = sheet.createRow(rowCount++);
-            row.createCell(0).setCellValue(employee.getEmployeeId());
-            row.createCell(1).setCellValue(employee.getEmployeeName());
+            row.createCell(0).setCellValue(employee.getEmployeeName());
+            row.createCell(1).setCellValue(employee.getEmployeeId());
             row.createCell(2).setCellValue(employee.getDesignation());
             row.createCell(3).setCellValue(employee.getDepartment());
             row.createCell(4).setCellValue(employee.getDob());
@@ -85,13 +102,16 @@ public class ExcelCommonUtil {
         }
     }
 
-    private void createRow(Sheet sheet, List<String> cellList, int rowNum) {
+    // Generating heaer and Header style
+    private void createRow(Sheet sheet, List<String> cellList, int rowNum, CellStyle style) {
         int size = cellList.size();
         Row row = sheet.createRow(rowNum);
 
         for (int i = 0; i < size; i++) {
             row.createCell(i)
                 .setCellValue(cellList.get(i));
+            row.getCell(i)
+                .setCellStyle(style);
         }
     }
 }

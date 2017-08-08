@@ -5,7 +5,7 @@
   "auther": "Syed Hussain",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build && mvn spring-boot:run",
     "test": "ng test",
     "lint": "ng lint",
