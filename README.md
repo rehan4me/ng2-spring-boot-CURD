@@ -33,7 +33,7 @@ $ npm install
 ```
 
 
-### Step to run the project
+## Step to run the project
 #### 1. Build and run the backend app using maven
 
 ```
