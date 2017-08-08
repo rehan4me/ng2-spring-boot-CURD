@@ -9,7 +9,6 @@ These instructions will get you a copy of the project up and running on your loc
 To run this project you will have to install following components in your environment.
 
 - Node.js: https://nodejs.org/en/
-- Angular-CLI: http://gulpjs.com
 - MongoDB: https://www.mongodb.com/
 - Maven: http://maven.apache.org/
 
@@ -18,6 +17,12 @@ To run this project you will have to install following components in your enviro
 
 ```
 $ cd ng4-spring-boot-mongodb-demo
+```
+
+### Installing Angular CLI
+
+```
+npm install -g @angular/cli
 ```
 
 ### Installing Angular 4 project dependencies
