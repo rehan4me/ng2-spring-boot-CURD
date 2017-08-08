@@ -1,4 +1,4 @@
-# ng2-spring-boot-demo
+# ng4-spring-boot-mongodb-demo
 
 Simple demo app developed using Angular 4, Spring-Boot and MongoDB.
 
@@ -23,7 +23,7 @@ $ npm install npm@latest -g
 Go to project directory and install following dependacies.
 
 ```
-$ cd ng2-spring-boot-demo
+$ cd ng4-spring-boot-mongodb-demo
 ```
 
 ### Installing Angular 4 project dependencies
