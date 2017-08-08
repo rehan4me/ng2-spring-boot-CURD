@@ -14,13 +14,7 @@ To run this project you will have to install following components in your enviro
 - Maven: http://maven.apache.org/
 
 
-### Installing/Updating npm
-
-```
-$ npm install npm@latest -g
-```
-
-Go to project directory and install following dependacies.
+#### Go to project directory and install following dependacies.
 
 ```
 $ cd ng4-spring-boot-mongodb-demo
