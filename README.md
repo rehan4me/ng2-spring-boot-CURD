@@ -44,7 +44,7 @@ $ npm install
 $ mvn package 
 $ java -jar target/ems-1.0.0.jar
 ```
-Alternatively, you can run the app without packaging it using -
+Alternatively, you can run the app without packaging it using this command-
 ```
 $ mvn spring-boot:run
 ```
