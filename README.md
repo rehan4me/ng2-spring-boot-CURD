@@ -38,7 +38,7 @@ $ npm install
 
 ```
 $ mvn package 
-$ java -jar target/todoapp-1.0.0.jar
+$ java -jar target/ems-1.0.0.jar
 ```
 Alternatively, you can run the app without packaging it using -
 ```
