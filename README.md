@@ -34,7 +34,7 @@ $ npm install
 
 
 ### Run the project
-####Build and run the backend app using maven
+#### Build and run the backend app using maven
 
 ```
 $ mvn package 
@@ -46,7 +46,7 @@ $ mvn spring-boot:run
 ```
 The backend server will start at http://localhost:8080.
 
-####Run frontend app using npm 
+#### Run frontend app using npm 
 
 ```
 $ npm start
