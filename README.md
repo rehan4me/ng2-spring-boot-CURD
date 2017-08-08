@@ -1,29 +1,55 @@
 # Employees
 
 Simple demo app developed using Angular 4, Spring-Boot and MongoDB.
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
 
-## Development server
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
+To run this project you will have to install following components in your environment.
 
-## Code scaffolding
+Node.js: https://nodejs.org/en/
+Angular-CLI: http://gulpjs.com
+MongoDB: https://www.mongodb.com/
+Maven: http://maven.apache.org/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Installing/Updating npm
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
+$ npm install npm@latest -g
+```
 
-## Running unit tests
+Go to project directory and install following dependacies.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+$ cd ng2-spring-boot-demo
+```
 
-## Running end-to-end tests
+### Installing Angular 4 project dependencies
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+```
+$ npm install
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Run the project
+Build and run the backend app using maven
+
+```
+$ mvn package 
+$ java -jar target/todoapp-1.0.0.jar
+```
+Alternatively, you can run the app without packaging it using -
+```
+$ mvn spring-boot:run
+```
+The backend server will start at http://localhost:8080.
+
+Run frontend app using npm 
+
+```
+$ npm start
+```
+
+Now project is ready. Go to following url http://localhost:4200.
