@@ -1,4 +1,4 @@
-# Employees
+# ng2-spring-boot-demo
 
 Simple demo app developed using Angular 4, Spring-Boot and MongoDB.
 
@@ -34,7 +34,7 @@ $ npm install
 
 
 ### Run the project
-Build and run the backend app using maven
+####Build and run the backend app using maven
 
 ```
 $ mvn package 
@@ -46,10 +46,10 @@ $ mvn spring-boot:run
 ```
 The backend server will start at http://localhost:8080.
 
-Run frontend app using npm 
+####Run frontend app using npm 
 
 ```
 $ npm start
 ```
 
-Now project is ready. Go to following url http://localhost:4200.
+Now project is ready. Try it here http://localhost:4200.
