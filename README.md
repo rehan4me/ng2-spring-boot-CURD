@@ -1,5 +1,6 @@
 # Employees
 
+Simple demo app developed using Angular 4, Spring-Boot and MongoDB.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
 
 ## Development server
