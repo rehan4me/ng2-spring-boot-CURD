@@ -1,0 +1,66 @@
+
+<form class="example-form" *ngIf="empData">
+  	<md-card class="example-card">
+	  <md-card-header>
+	    <!-- <div md-card-avatar class="example-header-image"></div>
+	    <md-card-title>{{empData.employeeName}}</md-card-title>
+	    <md-card-subtitle>Dog Breed</md-card-subtitle> -->
+	  </md-card-header>
+	  <md-card-content>
+	     <table class="example-full-width" cellspacing="0">
+			  <tr>
+			    <td><md-input-container class="example-full-width">
+			      <input mdInput placeholder="Employee ID" name="empId" type="text" [(ngModel)]="empData.employeeId">
+			    </md-input-container></td>
+			    <td><md-input-container class="example-full-width">
+			      <input mdInput placeholder="Employee Name" name="empName" type="text" [(ngModel)]="empData.employeeName">
+			    </md-input-container></td>
+			  </tr>
+			  <tr>
+			    <td><md-input-container class="example-full-width">
+			      <input mdInput placeholder="Designation" name="designation" type="text" [(ngModel)]="empData.designation">
+			    </md-input-container></td>
+			    <td>
+			    	<md-select placeholder="Department" [(ngModel)]="empData.department" name="department">
+					    <md-option *ngFor="let dept of departments" [value]="dept">
+					      {{dept}}
+					    </md-option>
+					</md-select>
+			    </td>
+			  </tr>
+			  <tr>
+			    <td>
+			    	<md-input-container class="example-full-width">
+			      		<input mdInput  name="dob" [(ngModel)]="empData.dob" [mdDatepicker]="dob" placeholder="Date Of Birth">
+		  		  		<button mdSuffix [mdDatepickerToggle]="dob"></button>
+			    	</md-input-container>
+			    	<md-datepicker #dob></md-datepicker>
+			    </td>
+			    <td>
+			    	<md-input-container class="example-full-width">
+			      		<input mdInput name="startDate" [(ngModel)]="empData.startDate" [mdDatepicker]="sd" placeholder="Start Date">
+		  		  		<button mdSuffix [mdDatepickerToggle]="sd"></button>
+			    	</md-input-container>
+			    	<md-datepicker #sd></md-datepicker>
+			    </td>
+			  </tr>
+			  <tr>
+			    <td>
+			    	<md-input-container class="example-full-width">
+			      		<input mdInput name="endDate" [(ngModel)]="empData.endDate" [mdDatepicker]="ed" placeholder="End Date">
+		  		  		<button mdSuffix [mdDatepickerToggle]="ed"></button>
+			    	</md-input-container>
+			    	<md-datepicker #ed></md-datepicker>
+			    </td>
+			    <td><md-input-container class="example-full-width">
+			      <input mdInput placeholder="Manager" name="manager" type="text" [(ngModel)]="empData.manager">
+			    </md-input-container></td>
+			  </tr>
+		  </table>
+	  </md-card-content>
+	  <md-card-actions style="text-align: right;">
+	    <button md-button color="primary" (click)="saveEmp()">Save</button>
+	    <button md-button color="accent" (click)="goBack()">Cancel</button>
+	  </md-card-actions>
+	</md-card>
+</form>

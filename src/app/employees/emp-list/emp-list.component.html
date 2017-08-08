@@ -1,0 +1,53 @@
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <md-input-container floatPlaceholder="never">
+      <input mdInput #filter placeholder="Search employee by name">
+    </md-input-container>
+    <button md-button color="primary"  type="button" (click)="createEmployee()">Add Employee</button>
+    <button md-button color="primary"  type="button" (click)="exportToExcel()">Export To Excel</button>
+  </div>
+
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Employee ID Column -->
+    <ng-container cdkColumnDef="employeeId">
+      <md-header-cell *cdkHeaderCellDef> Employee ID </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.employeeId}} </md-cell>
+    </ng-container>
+
+    <!-- Employee Name Column -->
+    <ng-container cdkColumnDef="employeeName">
+      <md-header-cell *cdkHeaderCellDef> Employee Name </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.employeeName}} </md-cell>
+    </ng-container>
+
+    <!-- Department Column -->
+    <ng-container cdkColumnDef="department">
+      <md-header-cell *cdkHeaderCellDef> Department </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.department}} </md-cell>
+    </ng-container>
+
+    <!-- Manager Column -->
+    <ng-container cdkColumnDef="manager">
+      <md-header-cell *cdkHeaderCellDef> Manager </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.manager}} </md-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="actions">
+      <md-header-cell *cdkHeaderCellDef>  </md-header-cell>
+      <md-cell *cdkCellDef="let row">
+        <form>
+      	<button md-button color="primary"  type="button" (click)="openEmpDoc(row.id)">Edit</button>
+      	<button md-button color="accent" type="button" (click)="deleteEmployee(row.id)">Delete</button>
+        </form>
+      </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
